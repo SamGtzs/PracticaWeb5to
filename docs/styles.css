@@ -1,0 +1,11 @@
+body{
+    background-color: azure;
+    color: blueviolet;
+    text-align: center;
+}
+
+img
+{
+    max-width: 200px;
+    margin: 20 px;
+}
