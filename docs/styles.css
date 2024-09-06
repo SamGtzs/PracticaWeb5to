@@ -1,7 +1,7 @@
 body{
-    background-color: azure;
+    background-color: azure !important; 
     color: blueviolet;
-    text-align: center;
+    text-align: center !important;
 }
 
 img
