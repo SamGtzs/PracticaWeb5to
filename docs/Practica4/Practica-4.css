@@ -1,0 +1,27 @@
+html{
+    background-color: blanchedalmond;
+    margin: 10;
+}
+body{
+    background-color: blanchedalmond !important;
+}
+img{
+    justify-content: center;
+    text-align: center;
+    height: auto;
+    width: 25%;
+    max-width: 50% ;
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px rgb(0,0,0,0.5);   
+}
+
+.custom-carousel {
+    height: 50%;
+    width: cover;
+}
+.custom-carousel .carousel-inner, .custom-carousel .carousel-item, .custom-carousel .carousel-item img {
+    height: 50%;
+}
+.text-Center{
+    text-align: center;
+}
