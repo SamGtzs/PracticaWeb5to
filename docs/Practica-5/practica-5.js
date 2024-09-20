@@ -29,7 +29,20 @@ let carrito = [];
     }
     console.error(`El producto "${productoNombre}" no existe.`);
   }
-  
+
+  function eliminarAlCarrito(productoNombre, cantidad){
+    for ( let item of carrito) {
+        if(productoNombre == item.nombre){
+            item.cantidad -= cantidad;
+            if(item.cantidad <= 0){
+                carrito.splice(carrito.indexOf(item),1);
+                console.log(`${productoNombre}, Se ha eliminado completamente del carrito`)
+            }
+            console.log(` se han eliminado ${cantidad} ${productoNombre},del carrito`)
+           }
+        }
+    }
+
   // Instrucción 3
   function calcularTotal() {
     let total = 0;
@@ -77,9 +90,10 @@ let carrito = [];
   agregarAlCarrito("Camisetas", 3);
   agregarAlCarrito("Camiseta", 3);
   agregarAlCarrito("Pantalones", 2);
-  console.log(carrito);
+
+  eliminarAlCarrito("Zapatos", 2);
+  eliminarAlCarrito("Camiseta", 3);
   
-  /* let total = calcularTotal();
-  total = aplicarDescuento(total);
-  console.log(total); */
+
+  console.log(carrito);
   procesarCompra();
