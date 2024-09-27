@@ -82,17 +82,6 @@
   animation: encoger 0.5s ease forwards;
 }
 
-.mensaje-compra{ 
-  position: fixed;
-  left: 0;
-  width: 100%;
-  background-color: #28a745;
-  color: white;
-  text-align: center;
-  padding: 1em;
-  font-size: 1.5em;
-  z-index: 1000;
-}
 .mensaje-compra{
   color:#3498db;
   background-color:aquamarine;

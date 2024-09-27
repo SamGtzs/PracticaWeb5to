@@ -4,7 +4,6 @@ const $finalizarMensaje = document.querySelector("#mensaje-compra");
 let carrito = {}; 
 
 document.addEventListener("click", function (e) {
-    // Sumar producto
     if (e.target.matches(".btn-sumar")) {
         const producto = e.target.closest(".producto");
         let id = producto.getAttribute("data-id");
@@ -43,38 +42,25 @@ function actualizarCarrito() {
     const btnCompra = document.querySelector("#btn-compra");
     listaCarrito.innerHTML = "";
     let total = 0;
-    let tieneProductos = false;
+    let contieneProductos = false;
 
     Object.keys(carrito).forEach((id) => {
         const item = carrito[id];
         const itemCarrito = document.createElement("li");
-        itemCarrito.innerText = `${item.nombre} - ${item.cantidad} unidades - $${(item.precio * item.cantidad).toFixed(2)}`;
+        itemCarrito.innerText = `${item.nombre} - ${item.cantidad} unidades  
+        Subtotal $${(item.precio * item.cantidad).toFixed(2)}`;
         listaCarrito.appendChild(itemCarrito);
         total += item.precio * item.cantidad;
-        tieneProductos = true;
+        contieneProductos = true;
     });
 
     totalCarrito.innerText = total.toFixed(2);
 
-    if (tieneProductos) {
+    if (contieneProductos) {
         btnCompra.disabled = false;
     } else {
         btnCompra.disabled = true;
     }
-}
-
-// Actualizar botones de restar
-function actualizarBotones() {
-  document.querySelectorAll(".producto").forEach((producto) => {
-      let id = producto.getAttribute("data-id");
-      const btnRestar = producto.querySelector(".btn-restar");
-
-      if (!carrito[id] || carrito[id].cantidad === 0) {
-          btnRestar.disabled = true;
-      } else {
-          btnRestar.disabled = false;
-      }
-  });
 }
 
 
