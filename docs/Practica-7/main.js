@@ -10,6 +10,7 @@ const $confirmPasswordInput = d.querySelector("#confirm-password");
 const $confirmPasswordError = d.querySelector("#confirm-password-error");
 const $successMessage = d.querySelector("#success-message");
 const $errorsMessages = d.querySelectorAll(".error");
+const loading = d.querySelector("#mensaje-espera");
 
 // Función de Validación del Formulario
 function validateForm(e) {
@@ -65,8 +66,14 @@ function validateForm(e) {
     e.preventDefault();
   } else {
     e.preventDefault();
-    $successMessage.innerText = "Formulario enviado exitosamente.";
-    $form.reset();
+    loading.classList.remove("hidden");
+    setTimeout(()=>{
+        loading.classList.add("hidden");
+        $successMessage.innerText = "Formulario enviado exitosamente.";
+        $form.reset();
+    },5000)
+   
+   
     // Aquí puedes manejar el envío real de datos a un servidor, por ejemplo, usando fetch.
   }
 }
